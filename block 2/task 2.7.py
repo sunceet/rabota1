@@ -7,5 +7,6 @@ def sum_positive_numbers():
         sum += number
     return sum
 
+
 result = sum_positive_numbers()
 print("Сумма положительных чисел:", result)

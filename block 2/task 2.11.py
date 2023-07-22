@@ -1,8 +1,9 @@
 def sum_of_range(a, b):
     sum = 0
-    for number in range(a, b+1):
+    for number in range(a, b + 1):
         sum += number
     return sum
+
 
 a = int(input("Введите значение a: "))
 b = int(input("Введите значение b: "))

@@ -1,5 +1,6 @@
 import random
 
+
 def game():
     win = 0
     loss = 0
@@ -28,5 +29,6 @@ def game():
         else:
             print("Игра завершена.")
             break
+
 
 game()

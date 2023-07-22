@@ -14,6 +14,7 @@ def max_digit_position(number):
 
     return max_digit_position_from_end, max_digit_position_from_start
 
+
 number = input("Введите натуральное число, в котором все цифры различны: ")
 result_end, result_start = max_digit_position(number)
 print("Порядковый номер максимальной цифры (от конца):", result_end)
