@@ -3,13 +3,14 @@ def encrypt_rot13(string):
     for char in string:
         if char.isalpha():
             if char.islower():
-                encrypted_char = chr((ord(char) - ord('a') + 13) % 26 + ord('a'))
+                xix = chr((ord(char) - ord('a') + 13) % 26 + ord('a'))
             else:
-                encrypted_char = chr((ord(char) - ord('A') + 13) % 26 + ord('A'))
+                xix = chr((ord(char) - ord('A') + 13) % 26 + ord('A'))
         else:
-            encrypted_char = char
-        encrypted_string += encrypted_char
+            xix = char
+        encrypted_string += xix
     return encrypted_string
+
 
 string = input("Введите строку: ")
 encrypted_string = encrypt_rot13(string)

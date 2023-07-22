@@ -1,39 +1,30 @@
-def find_paths(graph, start, end, path=[]):
-    # Добавляем текущую вершину в путь
-    path = path + [start]
-    
-    # Если текущая вершина является целью, добавляем путь к списку всех путей
-    if start == end:
+def find_paths(graph: dict, current_node: str, end: str, path=[]):
+
+    path = path + [current_node]
+
+    if current_node == end:
         return [path]
-    
-    # Если текущая вершина не существует в графе, возвращаем пустой список
-    if start not in graph:
-        return []
-    
-    # Рекурсивно ищем пути от соседних вершин до целевой вершины
+
     paths = []
-    for node in graph[start]:
-        if node not in path:
-            new_paths = find_paths(graph, node, end, path)
-            for new_path in new_paths:
-                paths.append(new_path)
-    
+
+    for node in graph[current_node]:
+        new_paths = find_paths(graph, node, end, path)
+        paths.extend(new_paths)
+
     return paths
 
 
-graph = { 
-    'A': ['B', 'C'], 
-    'B': ['D', 'E'], 
-    'C': ['F'], 
-    'D': [], 
-    'E': ['F'], 
-    'F': [] 
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': ['F'],
+    'F': []
 }
 
 start = 'A'
 end = 'F'
 
-all_paths = find_paths(graph, start, end)
-print(f"Все пути от вершины {start} до вершины {end}:")
-for path in all_paths:
-    print(' -> '.join(path))
+paths = find_paths(graph, start, end)
+print(f'All ways from {start} to {end}: {paths}')

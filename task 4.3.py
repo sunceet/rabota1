@@ -6,6 +6,7 @@ def is_prime(number):
             return False
     return True
 
+
 def find_primes(start, end):
     primes = []
     for number in range(start, end + 1):
@@ -13,7 +14,7 @@ def find_primes(start, end):
             primes.append(number)
     return primes
 
-# Пример выполнения программы
+
 start = int(input("Введите начало диапазона: "))
 end = int(input("Введите конец диапазона: "))
 primes = find_primes(start, end)
